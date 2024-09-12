@@ -1,4 +1,4 @@
-# Trabajo Integrador de Simulación 2024
+# Trabajo Práctico Integrador de Simulación 2024
 ## Integrantes 
 |Apellido y Nombres|
 |:-|
