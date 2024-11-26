@@ -4,10 +4,10 @@
 	         AnyLogic Project File
 *************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.2.202410172112" AlpVersion="8.9.2">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.3.202411201858" AlpVersion="8.9.2">
 <Model>
 	<Id>1729440188666</Id>
-	<Name><![CDATA[Testing4]]></Name>
+	<Name><![CDATA[testing4]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[wind_farm_project]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Day]]></ModelTimeUnit>
@@ -109,7 +109,146 @@
 			</ScaleRuler>
 			<CurrentLevel>1729440188676</CurrentLevel>
 			<ConnectionsId>1729440188670</ConnectionsId>
+			<Outputs>
+				<Output>
+					<Id>1732545200320</Id>
+					<Name><![CDATA[powerGeneratedO]]></Name>
+					<X>130</X><Y>740</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Type><![CDATA[double]]></Type>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<Value Class="CodeValue">
+						<Code><![CDATA[tpSum / 365]]></Code>
+					</Value>
+					<ComputationMoment>ON_SIMULATION_END</ComputationMoment>
+					<ComputationTimeCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</ComputationTimeCode>
+					<ComputationDate>1732608000000</ComputationDate>
+				</Output>
+				<Output>
+					<Id>1732545867464</Id>
+					<Name><![CDATA[windSpeedO]]></Name>
+					<X>130</X><Y>790</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Type><![CDATA[double]]></Type>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<Value Class="CodeValue">
+						<Code><![CDATA[wgSum / 365]]></Code>
+					</Value>
+					<ComputationMoment>ON_SIMULATION_END</ComputationMoment>
+					<ComputationTimeCode Class="CodeUnitValue">
+						<Code><![CDATA[]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</ComputationTimeCode>
+					<ComputationDate>1732608000000</ComputationDate>
+				</Output>
+				<Output>
+					<Id>1732556230724</Id>
+					<Name><![CDATA[housesO]]></Name>
+					<X>130</X><Y>830</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Type><![CDATA[double]]></Type>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<Value Class="CodeValue">
+						<Code><![CDATA[hSum / 365]]></Code>
+					</Value>
+					<ComputationMoment>ON_SIMULATION_END</ComputationMoment>
+					<ComputationTimeCode Class="CodeUnitValue">
+						<Code><![CDATA[]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</ComputationTimeCode>
+					<ComputationDate>1732608000000</ComputationDate>
+				</Output>
+				<Output>
+					<Id>1732581767423</Id>
+					<Name><![CDATA[utilizationRateO]]></Name>
+					<X>130</X><Y>870</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Type><![CDATA[double]]></Type>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<Value Class="CodeValue">
+						<Code><![CDATA[tuSum / 365 *100]]></Code>
+					</Value>
+					<ComputationMoment>ON_SIMULATION_END</ComputationMoment>
+					<ComputationTimeCode Class="CodeUnitValue">
+						<Code><![CDATA[]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</ComputationTimeCode>
+					<ComputationDate>1732608000000</ComputationDate>
+				</Output>
+			</Outputs>
 			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1732549000678</Id>
+					<Name><![CDATA[tpSum]]></Name>
+					<X>570</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732549185650</Id>
+					<Name><![CDATA[wgSum]]></Name>
+					<X>690</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732556278567</Id>
+					<Name><![CDATA[hSum]]></Name>
+					<X>780</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1732581710050</Id>
+					<Name><![CDATA[tuSum]]></Name>
+					<X>860</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1731329211642</Id>
 					<Name><![CDATA[casaConsumo]]></Name>
@@ -184,6 +323,42 @@
 					</Properties>                 
 				</Variable>
 			</Variables>
+			<Events>
+				<Event>
+					<Id>1732548949951</Id>
+					<Name><![CDATA[addTotalPower]]></Name>
+					<X>440</X><Y>-20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1732608000000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[tpSum = tpSum + turbines.TotalPower();
+wgSum = wgSum + turbines(0).windSpeed;
+hSum = hSum + turbines.TotalPower()*24/ casaConsumo;
+tuSum = tuSum + turbines.TotalPower()/ (maxUtilizacion * cantGen)]]></Action>
+				</Event>
+			</Events>
 			<AnalysisData>
     			<Statistics>
 					<Id>1731330012355</Id>
@@ -241,7 +416,7 @@
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1731398400000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
-						<Code><![CDATA[0]]></Code>
+						<Code><![CDATA[1]]></Code>
 						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 					</OccurrenceTime>
 					<RecurrenceCode Class="CodeUnitValue">
@@ -250,6 +425,28 @@
 					</RecurrenceCode>
 					<Discrete>true</Discrete>
 					<ValueCode><![CDATA[turbines(0).windSpeed]]></ValueCode>
+				</Statistics>
+    			<Statistics>
+					<Id>1732547536627</Id>
+					<Name><![CDATA[totalPower]]></Name>
+					<X>781</X><Y>661</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+					<ValueCode><![CDATA[turbines.TotalPower()]]></ValueCode>
 				</Statistics>
 			</AnalysisData>
 			<AgentLinks>
@@ -312,7 +509,14 @@
 						<Expression><![CDATA[turbines.stream().mapToDouble(t -> t.powerGenerated).sum()]]></Expression>
 						<Condition><![CDATA[]]></Condition>
 					</StatisticsItem>
-					<InEnvironment>true</InEnvironment>	
+					<StatisticsItem>
+						<Id>1732546148884</Id>
+						<Name><![CDATA[TotalPowerSum]]></Name>
+						<Type>sum</Type>
+						<Expression><![CDATA[turbines.stream().mapToDouble(t -> t.powerGenerated).sum()]]></Expression>
+						<Condition><![CDATA[]]></Condition>
+					</StatisticsItem>
+					<InEnvironment>true</InEnvironment>
 					<InitialLocationType>XYZ</InitialLocationType>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -365,7 +569,7 @@
 								<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
 								<ItemName><![CDATA[y]]></ItemName>
 							</Value>
-						</Item>	
+						</Item>
 					</ParameterToDatabaseColumnMapping>
 				</EmbeddedObject>
 			</EmbeddedObjects>
@@ -448,7 +652,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729903559465</Id>
 					<Name><![CDATA[wind_blades]]></Name>
@@ -493,7 +697,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -565,7 +769,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904510504</Id>
 					<Name><![CDATA[wind_blades1]]></Name>
@@ -610,7 +814,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -659,7 +863,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904516090</Id>
 					<Name><![CDATA[wind_blades2]]></Name>
@@ -704,7 +908,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -753,7 +957,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904518918</Id>
 					<Name><![CDATA[wind_blades3]]></Name>
@@ -798,7 +1002,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -847,7 +1051,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904521935</Id>
 					<Name><![CDATA[wind_blades4]]></Name>
@@ -892,7 +1096,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -941,7 +1145,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904524820</Id>
 					<Name><![CDATA[wind_blades5]]></Name>
@@ -986,7 +1190,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1035,7 +1239,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904559739</Id>
 					<Name><![CDATA[wind_blades6]]></Name>
@@ -1080,7 +1284,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1129,7 +1333,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904562969</Id>
 					<Name><![CDATA[wind_blades7]]></Name>
@@ -1174,7 +1378,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1223,7 +1427,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904565619</Id>
 					<Name><![CDATA[wind_blades8]]></Name>
@@ -1268,7 +1472,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1317,7 +1521,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904571363</Id>
 					<Name><![CDATA[wind_blades9]]></Name>
@@ -1362,7 +1566,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1411,7 +1615,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904574379</Id>
 					<Name><![CDATA[wind_blades10]]></Name>
@@ -1456,7 +1660,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1505,7 +1709,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904578079</Id>
 					<Name><![CDATA[wind_blades11]]></Name>
@@ -1550,7 +1754,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1599,7 +1803,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904607848</Id>
 					<Name><![CDATA[wind_blades12]]></Name>
@@ -1644,7 +1848,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1693,7 +1897,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904612391</Id>
 					<Name><![CDATA[wind_blades13]]></Name>
@@ -1738,7 +1942,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1787,7 +1991,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904615447</Id>
 					<Name><![CDATA[wind_blades14]]></Name>
@@ -1832,7 +2036,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1881,7 +2085,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904618777</Id>
 					<Name><![CDATA[wind_blades15]]></Name>
@@ -1926,7 +2130,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1975,7 +2179,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904622288</Id>
 					<Name><![CDATA[wind_blades16]]></Name>
@@ -2020,7 +2224,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -2310,7 +2514,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910716695</Id>
 					<Name><![CDATA[transmission_tower_3]]></Name>
@@ -2347,7 +2551,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910718549</Id>
 					<Name><![CDATA[transmission_tower_4]]></Name>
@@ -2384,7 +2588,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910766882</Id>
 					<Name><![CDATA[cow]]></Name>
@@ -2429,7 +2633,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910778523</Id>
 					<Name><![CDATA[cow1]]></Name>
@@ -2474,7 +2678,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910867927</Id>
 					<Name><![CDATA[transmission_tower_6]]></Name>
@@ -2511,7 +2715,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910961796</Id>
 					<Name><![CDATA[airliner]]></Name>
@@ -2536,7 +2740,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729911111457</Id>
 					<Name><![CDATA[lorry]]></Name>
@@ -2573,7 +2777,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729911124301</Id>
 					<Name><![CDATA[hangar_2]]></Name>
@@ -2610,7 +2814,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Level>
@@ -2785,9 +2989,6 @@
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="50">
-						<EntryAction><![CDATA[if (getIndex()==0) {
-main.wind_turbine_tower.setColor("MA_Color_000", yellowGreen);
-}]]></EntryAction>
 						<FillColor>-6632142</FillColor>
 					</Properties>
 				</StatechartElement>
@@ -2902,6 +3103,19 @@ if (windSpeed < 3) {
 						<ClassName><![CDATA[Main]]></ClassName>
 					</ActiveObjectClass>
 				</ContainerLink>
+				<ContainerLink>
+					<Id>1732235024162</Id>
+					<Name><![CDATA[scenario1]]></Name>
+					<X>150</X><Y>-100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[Scenario1]]></ClassName>
+					</ActiveObjectClass>
+				</ContainerLink>
 			</ContainerLinks>
 
 			<Presentation>
@@ -2947,10 +3161,2629 @@ if (windSpeed < 3) {
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Level>
+			</Presentation>
+
+		</ActiveObjectClass>
+		<!--   =========   Active Object Class   ========  -->
+		<ActiveObjectClass>
+			<Id>1732235023951</Id>
+			<Name><![CDATA[Scenario1]]></Name>
+			<Generic>false</Generic>
+			<GenericParameter>
+				<Id>1732235023946</Id>
+				<Name><![CDATA[1732235023946]]></Name>
+				<GenericParameterValue Class="CodeValue">
+					<Code><![CDATA[T extends Agent]]></Code>
+				</GenericParameterValue>
+				<GenericParameterLabel><![CDATA[Generic parameter:]]></GenericParameterLabel>
+			</GenericParameter>
+			<FlowChartsUsage>ENTITY</FlowChartsUsage>
+			<SamplesToKeep>100</SamplesToKeep>
+			<LimitNumberOfArrayElements>false</LimitNumberOfArrayElements>
+			<ElementsLimitValue>100</ElementsLimitValue>
+			<MakeDefaultViewArea>true</MakeDefaultViewArea>
+			<SceneGridColor/>
+			<SceneBackgroundColor/>
+			<SceneSkybox>null</SceneSkybox>
+			<AgentProperties>
+				<EnvironmentDefinesInitialLocation>true</EnvironmentDefinesInitialLocation>
+				<RotateAnimationTowardsMovement>true</RotateAnimationTowardsMovement>
+				<RotateAnimationVertically>false</RotateAnimationVertically>
+				<VelocityCode Class="CodeUnitValue">
+					<Code><![CDATA[10]]></Code>
+					<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
+				</VelocityCode>
+				<PhysicalLength Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalLength>
+				<PhysicalWidth Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalWidth>
+				<PhysicalHeight Class="CodeUnitValue">
+					<Code><![CDATA[1]]></Code>
+					<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+				</PhysicalHeight>
+			</AgentProperties>
+			<EnvironmentProperties>
+					<EnableSteps>false</EnableSteps>
+					<StepDurationCode Class="CodeUnitValue">
+						<Code><![CDATA[1.0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+					</StepDurationCode>
+					<SpaceType>GIS</SpaceType>
+					<WidthCode><![CDATA[500]]></WidthCode>
+					<HeightCode><![CDATA[500]]></HeightCode>
+					<ZHeightCode><![CDATA[0]]></ZHeightCode>
+					<ColumnsCountCode><![CDATA[100]]></ColumnsCountCode>
+					<RowsCountCode><![CDATA[100]]></RowsCountCode>
+					<NeigborhoodType>MOORE</NeigborhoodType>
+					<LayoutType>USER_DEF</LayoutType>
+					<NetworkType>USER_DEF</NetworkType>
+					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
+					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
+					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
+					<MCode><![CDATA[10]]></MCode>
+			</EnvironmentProperties>
+			<DatasetsCreationProperties>
+				<AutoCreate>true</AutoCreate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1729497600000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+			</DatasetsCreationProperties>
+			<ScaleRuler>
+				<Id>1732235023947</Id>
+				<Name><![CDATA[scale]]></Name>
+				<X>0</X><Y>-150</Y>
+				<PublicFlag>false</PublicFlag>
+				<PresentationFlag>false</PresentationFlag>
+				<ShowLabel>false</ShowLabel>
+				<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+				<Length>100</Length>
+				<Rotation>0</Rotation>
+				<ScaleType>BASED_ON_LENGTH</ScaleType>
+				<ModelLength>10</ModelLength>
+				<LengthUnits>METER</LengthUnits>
+				<Scale>10</Scale>
+				<InheritedFromParentAgentType>true</InheritedFromParentAgentType>
+			</ScaleRuler>
+			<CurrentLevel>1732235023962</CurrentLevel>
+			<ConnectionsId>1732235024161</ConnectionsId>
+			<Variables>
+				<Variable Class="Parameter">
+					<Id>1732235024153</Id>
+					<Name><![CDATA[casaConsumo]]></Name>
+					<X>130</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[10.95890411]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1732235024151</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1732235024156</Id>
+					<Name><![CDATA[maxUtilizacion]]></Name>
+					<X>130</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[3000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1732235024154</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1732235024159</Id>
+					<Name><![CDATA[cantGen]]></Name>
+					<X>130</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[16
+]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1732235024157</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<AnalysisData>
+    			<Statistics>
+					<Id>1732235023954</Id>
+					<Name><![CDATA[casasAbastecidas]]></Name>
+					<X>280</X><Y>620</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+					<ValueCode><![CDATA[turbines.TotalPower()*24/ casaConsumo]]></ValueCode>
+				</Statistics>
+    			<Statistics>
+					<Id>1732235023957</Id>
+					<Name><![CDATA[tasaUtilizacion]]></Name>
+					<X>530</X><Y>620</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+					<ValueCode><![CDATA[turbines.TotalPower()/ (maxUtilizacion * cantGen)]]></ValueCode>
+				</Statistics>
+    			<Statistics>
+					<Id>1732235023960</Id>
+					<Name><![CDATA[vientoPromedio]]></Name>
+					<X>780</X><Y>620</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+					<ValueCode><![CDATA[turbines(0).windSpeed]]></ValueCode>
+				</Statistics>
+			</AnalysisData>
+			<AgentLinks>
+				<AgentLink>
+					<Id>1732235024161</Id>
+					<Name><![CDATA[connections]]></Name>
+					<X>50</X><Y>-50</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<HandleReceiveInConnections>false</HandleReceiveInConnections>
+					<AgentLinkType>COLLECTION_OF_LINKS</AgentLinkType>
+					<AgentLinkBidirectional>true</AgentLinkBidirectional>
+					<MessageType><![CDATA[Object]]></MessageType>
+					<LineStyle>SOLID</LineStyle>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineZOrder>UNDER_AGENTS</LineZOrder>
+					<LineArrow>NONE</LineArrow>
+					<LineArrowPosition>END</LineArrowPosition>
+				</AgentLink>
+			</AgentLinks>
+
+			<EmbeddedObjects>
+				<EmbeddedObject>
+					<Id>1732235024148</Id>
+					<Name><![CDATA[turbines]]></Name>
+					<X>210</X><Y>-50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<PresentationId>1732235024144</PresentationId>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[Turbine]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[wind_farm_project]]></PackageName>
+							<ClassName><![CDATA[Turbine]]></ClassName>
+							<ItemName><![CDATA[1729440289475]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[id]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>true</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[16]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
+					<StatisticsItem>
+						<Id>1732235024149</Id>
+						<Name><![CDATA[TotalPower]]></Name>
+						<Type>average</Type>
+						<Expression><![CDATA[turbines.stream().mapToDouble(t -> t.powerGenerated).sum()]]></Expression>
+						<Condition><![CDATA[]]></Condition>
+					</StatisticsItem>
+					<InEnvironment>true</InEnvironment>
+					<InitialLocationType>XYZ</InitialLocationType>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+							<PackageName><![CDATA[wind_farm_project]]></PackageName>
+							<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+					<ParameterToDatabaseColumnMapping>
+						<Item>
+							<Key>
+								<PackageName><![CDATA[wind_farm_project]]></PackageName>
+								<ClassName><![CDATA[Turbine]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Key>
+							<Value>
+								<PackageName><![CDATA[wind_farm_project]]></PackageName>
+								<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
+								<ItemName><![CDATA[id]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								FAKE_PARAMETER_GIS_LOCATION_LONGITUDE_xjal
+							</Key>
+							<Value>
+								<PackageName><![CDATA[wind_farm_project]]></PackageName>
+								<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
+								<ItemName><![CDATA[x]]></ItemName>
+							</Value>
+						</Item>
+						<Item>
+							<Key>
+								FAKE_PARAMETER_GIS_LOCATION_LATITUDE_xjal
+							</Key>
+							<Value>
+								<PackageName><![CDATA[wind_farm_project]]></PackageName>
+								<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
+								<ItemName><![CDATA[y]]></ItemName>
+							</Value>
+						</Item>
+					</ParameterToDatabaseColumnMapping>
+				</EmbeddedObject>
+			</EmbeddedObjects>
+
+			<Presentation>
+				<Level>
+					<Id>1732235023962</Id>
+					<Name><![CDATA[level]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LevelVisibility>DIM_NON_CURRENT</LevelVisibility>
+
+			<Presentation>
+				<Image>
+					<Id>1732235023964</Id>
+					<Name><![CDATA[image]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Width>1000</Width>
+					<Height>601.312</Height>
+					<Rotation>0.0</Rotation>
+					<ImageFiles>
+						<ImageResourceReference>
+							<PackageName><![CDATA[wind_farm_project]]></PackageName>
+							<ClassName><![CDATA[mapa.png]]></ClassName>
+						</ImageResourceReference>
+					</ImageFiles>
+					<OriginalSize>false</OriginalSize>
+				</Image>
+				<Group>
+					<Id>1732235023966</Id>
+					<Name><![CDATA[turbine1]]></Name>
+					<X>213</X><Y>538</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235023968</Id>
+					<Name><![CDATA[wind_turbine_tower]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235023970</Id>
+					<Name><![CDATA[wind_blades]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235023972</Id>
+					<Name><![CDATA[wind_turbine_blades]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Control Type="Window3D">
+					<Id>1732235023974</Id>
+					<Name><![CDATA[window1]]></Name>
+					<X>300</X><Y>680</Y>
+					<Width>500</Width>
+					<Height>300</Height>
+					<MakeDefaultViewArea>true</MakeDefaultViewArea>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ShowLabel>false</ShowLabel>
+					<FollowCamera>false</FollowCamera>
+					<NavigationType>full</NavigationType>
+					<FarClippingDistance>2000</FarClippingDistance>
+					<Camera>camera1</Camera>
+				</Control>
+				<Camera3D>
+					<Id>1732235023976</Id>
+					<Name><![CDATA[camera1]]></Name>
+					<X>355.45</X><Y>808.42</Y><Z>153.71</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ShowLabel>false</ShowLabel>
+					<RotationX>15.08</RotationX>
+					<RotationZ>-85.64</RotationZ>
+				</Camera3D>
+				<Group>
+					<Id>1732235023978</Id>
+					<Name><![CDATA[turbine2]]></Name>
+					<X>223</X><Y>489</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235023980</Id>
+					<Name><![CDATA[wind_turbine_tower1]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235023982</Id>
+					<Name><![CDATA[wind_blades1]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235023984</Id>
+					<Name><![CDATA[wind_turbine_blades1]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235023986</Id>
+					<Name><![CDATA[turbine3]]></Name>
+					<X>239</X><Y>438</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235023988</Id>
+					<Name><![CDATA[wind_turbine_tower2]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235023990</Id>
+					<Name><![CDATA[wind_blades2]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235023992</Id>
+					<Name><![CDATA[wind_turbine_blades2]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235023994</Id>
+					<Name><![CDATA[turbine4]]></Name>
+					<X>255</X><Y>392</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235023996</Id>
+					<Name><![CDATA[wind_turbine_tower3]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235023998</Id>
+					<Name><![CDATA[wind_blades3]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024000</Id>
+					<Name><![CDATA[wind_turbine_blades3]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024002</Id>
+					<Name><![CDATA[turbine5]]></Name>
+					<X>266</X><Y>339</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024004</Id>
+					<Name><![CDATA[wind_turbine_tower4]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024006</Id>
+					<Name><![CDATA[wind_blades4]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024008</Id>
+					<Name><![CDATA[wind_turbine_blades4]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024010</Id>
+					<Name><![CDATA[turbine6]]></Name>
+					<X>327</X><Y>283</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024012</Id>
+					<Name><![CDATA[wind_turbine_tower5]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024014</Id>
+					<Name><![CDATA[wind_blades5]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024016</Id>
+					<Name><![CDATA[wind_turbine_blades5]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024018</Id>
+					<Name><![CDATA[turbine7]]></Name>
+					<X>464</X><Y>576</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024020</Id>
+					<Name><![CDATA[wind_turbine_tower6]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024022</Id>
+					<Name><![CDATA[wind_blades6]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024024</Id>
+					<Name><![CDATA[wind_turbine_blades6]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024026</Id>
+					<Name><![CDATA[turbine8]]></Name>
+					<X>500</X><Y>525</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024028</Id>
+					<Name><![CDATA[wind_turbine_tower7]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024030</Id>
+					<Name><![CDATA[wind_blades7]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024032</Id>
+					<Name><![CDATA[wind_turbine_blades7]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024034</Id>
+					<Name><![CDATA[turbine9]]></Name>
+					<X>543</X><Y>481</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024036</Id>
+					<Name><![CDATA[wind_turbine_tower8]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024038</Id>
+					<Name><![CDATA[wind_blades8]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024040</Id>
+					<Name><![CDATA[wind_turbine_blades8]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024042</Id>
+					<Name><![CDATA[turbine10]]></Name>
+					<X>596</X><Y>437</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024044</Id>
+					<Name><![CDATA[wind_turbine_tower9]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024046</Id>
+					<Name><![CDATA[wind_blades9]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024048</Id>
+					<Name><![CDATA[wind_turbine_blades9]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024050</Id>
+					<Name><![CDATA[turbine11]]></Name>
+					<X>631</X><Y>382</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024052</Id>
+					<Name><![CDATA[wind_turbine_tower10]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024054</Id>
+					<Name><![CDATA[wind_blades10]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024056</Id>
+					<Name><![CDATA[wind_turbine_blades10]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024058</Id>
+					<Name><![CDATA[turbine12]]></Name>
+					<X>699</X><Y>251</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024060</Id>
+					<Name><![CDATA[wind_turbine_tower11]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024062</Id>
+					<Name><![CDATA[wind_blades11]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024064</Id>
+					<Name><![CDATA[wind_turbine_blades11]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024066</Id>
+					<Name><![CDATA[turbine13]]></Name>
+					<X>724</X><Y>205</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024068</Id>
+					<Name><![CDATA[wind_turbine_tower12]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024070</Id>
+					<Name><![CDATA[wind_blades12]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024072</Id>
+					<Name><![CDATA[wind_turbine_blades12]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024074</Id>
+					<Name><![CDATA[turbine14]]></Name>
+					<X>754</X><Y>162</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024076</Id>
+					<Name><![CDATA[wind_turbine_tower13]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024078</Id>
+					<Name><![CDATA[wind_blades13]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024080</Id>
+					<Name><![CDATA[wind_turbine_blades13]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024082</Id>
+					<Name><![CDATA[turbine15]]></Name>
+					<X>784</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024084</Id>
+					<Name><![CDATA[wind_turbine_tower14]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024086</Id>
+					<Name><![CDATA[wind_blades14]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024088</Id>
+					<Name><![CDATA[wind_turbine_blades14]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024090</Id>
+					<Name><![CDATA[turbine44]]></Name>
+					<X>820</X><Y>51</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024092</Id>
+					<Name><![CDATA[wind_turbine_tower15]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024094</Id>
+					<Name><![CDATA[wind_blades15]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024096</Id>
+					<Name><![CDATA[wind_turbine_blades15]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Group>
+					<Id>1732235024098</Id>
+					<Name><![CDATA[turbine17]]></Name>
+					<X>582</X><Y>20</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024100</Id>
+					<Name><![CDATA[wind_turbine_tower16]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_tower.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Group>
+					<Id>1732235024102</Id>
+					<Name><![CDATA[wind_blades16]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>442.5</Z>
+					<ZCode><![CDATA[3.115 * Scale.DEFAULT_SCALE.pixelsPerUnit(METER)]]></ZCode>
+					<Rotation>0.0</Rotation>
+					<RotationYCode><![CDATA[time() * 0.25 / second()]]></RotationYCode>
+
+			<Presentation>
+				<Figure3D>
+					<Id>1732235024104</Id>
+					<Name><![CDATA[wind_turbine_blades16]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>0</X><Y>0</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/wind_turbine_blades_centered.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_000]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.07</Scale>
+					<Rotation>0.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Group>
+			</Presentation>
+
+				</Group>
+				<Camera3D>
+					<Id>1732235024106</Id>
+					<Name><![CDATA[camera2]]></Name>
+					<X>831.41</X><Y>-189.78</Y><Z>134.22</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ShowLabel>false</ShowLabel>
+					<RotationX>14.58</RotationX>
+					<RotationZ>119.83</RotationZ>
+				</Camera3D>
+				<Control Type="Window3D">
+					<Id>1732235024108</Id>
+					<Name><![CDATA[window2]]></Name>
+					<X>800</X><Y>680</Y>
+					<Width>500</Width>
+					<Height>300</Height>
+					<MakeDefaultViewArea>true</MakeDefaultViewArea>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ShowLabel>false</ShowLabel>
+					<FollowCamera>false</FollowCamera>
+					<NavigationType>full</NavigationType>
+					<FarClippingDistance>2000</FarClippingDistance>
+					<Camera>camera2</Camera>
+				</Control>
+				<Camera3D>
+					<Id>1732235024110</Id>
+					<Name><![CDATA[camera3]]></Name>
+					<X>623.4</X><Y>484.64</Y><Z>33.24</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ShowLabel>false</ShowLabel>
+					<RotationX>5.87</RotationX>
+					<RotationZ>-97.02</RotationZ>
+				</Camera3D>
+				<Control Type="Window3D">
+					<Id>1732235024112</Id>
+					<Name><![CDATA[window3]]></Name>
+					<X>1300</X><Y>680</Y>
+					<Width>500</Width>
+					<Height>300</Height>
+					<MakeDefaultViewArea>true</MakeDefaultViewArea>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ShowLabel>false</ShowLabel>
+					<FollowCamera>false</FollowCamera>
+					<NavigationType>full</NavigationType>
+					<FarClippingDistance>2000</FarClippingDistance>
+					<Camera>camera3</Camera>
+				</Control>
+    			<TimePlot>
+					<Id>1732235024116</Id>
+					<Name><![CDATA[windSpeedT0]]></Name>
+					<X>750</X><Y>30</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1727740800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>		
+					<TimeWindowUnits>YEAR</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[30]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Wind Speed]]></Title>
+					<Id>1732235024113</Id>
+					<Expression><![CDATA[turbines(i).windSpeed]]></Expression>
+					<Color>-6632142</Color>
+					<Expression2><![CDATA[turbines(0).windSpeed]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>365</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[1]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_DATE_DATE_ONLY</LabelFormat>
+    			</TimePlot>
+    			<TimePlot>
+					<Id>1732235024120</Id>
+					<Name><![CDATA[windSpeedT1]]></Name>
+					<X>750</X><Y>210</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1727740800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>		
+					<TimeWindowUnits>YEAR</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[3500]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Power Generated]]></Title>
+					<Id>1732235024117</Id>
+					<Expression><![CDATA[turbines(i).windSpeed]]></Expression>
+					<Color>-10496</Color>
+					<Expression2><![CDATA[turbines(0).powerGenerated]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>365</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[1]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_DATE_DATE_ONLY</LabelFormat>
+    			</TimePlot>
+    			<TimePlot>
+					<Id>1732235024124</Id>
+					<Name><![CDATA[windSpeedT2]]></Name>
+					<X>750</X><Y>390</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1727740800000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_DATA</TimeWindowsMovementType>		
+					<TimeWindowUnits>YEAR</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[52000]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Total Power]]></Title>
+					<Id>1732235024121</Id>
+					<Expression><![CDATA[turbines(i).windSpeed]]></Expression>
+					<Color>-5952982</Color>
+					<Expression2><![CDATA[turbines.TotalPower()]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>365</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[1]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_DATE_DATE_ONLY</LabelFormat>
+    			</TimePlot>
+				<Figure3D>
+					<Id>1732235024126</Id>
+					<Name><![CDATA[transmission_tower_2]]></Name>
+					<X>425</X><Y>475</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>425</X><Y>475</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/transmission_tower_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-11447983</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_11]]></Name>
+							<OriginalColor>-3618616</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_2]]></Name>
+							<OriginalColor>-9616125</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.5</Scale>
+					<Rotation>30.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024128</Id>
+					<Name><![CDATA[transmission_tower_3]]></Name>
+					<X>620</X><Y>240</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>620</X><Y>240</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/transmission_tower_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-11447983</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_11]]></Name>
+							<OriginalColor>-3618616</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_2]]></Name>
+							<OriginalColor>-9616125</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.5</Scale>
+					<Rotation>30.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024130</Id>
+					<Name><![CDATA[transmission_tower_4]]></Name>
+					<X>525</X><Y>355</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>525</X><Y>355</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/transmission_tower_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-11447983</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_11]]></Name>
+							<OriginalColor>-3618616</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_2]]></Name>
+							<OriginalColor>-9616125</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.5</Scale>
+					<Rotation>30.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024132</Id>
+					<Name><![CDATA[cow]]></Name>
+					<X>335</X><Y>535</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>335</X><Y>535</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/cow.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_007]]></Name>
+							<OriginalColor>-13027015</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_004]]></Name>
+							<OriginalColor>-7434610</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_C17]]></Name>
+							<OriginalColor>-10077165</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_A05]]></Name>
+							<OriginalColor>-13108</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.25</Scale>
+					<Rotation>60.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024134</Id>
+					<Name><![CDATA[cow1]]></Name>
+					<X>340</X><Y>545</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>340</X><Y>545</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/cow.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_007]]></Name>
+							<OriginalColor>-13027015</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-1</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_004]]></Name>
+							<OriginalColor>-7434610</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_C17]]></Name>
+							<OriginalColor>-10077165</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_Color_A05]]></Name>
+							<OriginalColor>-13108</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.25</Scale>
+					<Rotation>150.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024136</Id>
+					<Name><![CDATA[transmission_tower_6]]></Name>
+					<X>710</X><Y>120</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>710</X><Y>120</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/transmission_tower_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-11447983</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_11]]></Name>
+							<OriginalColor>-3618616</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_2]]></Name>
+							<OriginalColor>-9616125</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.5</Scale>
+					<Rotation>30.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024138</Id>
+					<Name><![CDATA[airliner]]></Name>
+					<X>780</X><Y>40</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>780</X><Y>40</Y><Z>200</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/airliner.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.24</Scale>
+					<Rotation>126.0</Rotation>
+					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024140</Id>
+					<Name><![CDATA[lorry]]></Name>
+					<X>457</X><Y>576</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>457</X><Y>576</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/lorry.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[Material__2__Surf]]></Name>
+							<OriginalColor>-11893830</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[Material__3__Surf]]></Name>
+							<OriginalColor>-3618616</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[Material__1__Surf]]></Name>
+							<OriginalColor>-11908534</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.14</Scale>
+					<Rotation>345.0</Rotation>
+					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+				<Figure3D>
+					<Id>1732235024142</Id>
+					<Name><![CDATA[hangar_2]]></Name>
+					<X>360</X><Y>510</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>360</X><Y>510</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[wind_farm_project]]></PackageName>
+						<ClassName><![CDATA[3d/hangar_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_9]]></Name>
+							<OriginalColor>-16777216</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material]]></Name>
+							<OriginalColor>-11447983</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[MA_material_11]]></Name>
+							<OriginalColor>-3618616</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>0.3</Scale>
+					<Rotation>305.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+</Figure3D>
+			</Presentation>
+
+				</Level>
+				<EmbeddedObjectPresentation>
+					<Id>1732235024144</Id>
+					<Name><![CDATA[turbines_presentation]]></Name>
+					<X>310</X><Y>-60</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
+					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
+					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
+					<Latitude>-43.136901461274114</Latitude>
+					<Longitude>-65.25503371358683</Longitude>
+				</EmbeddedObjectPresentation>
 			</Presentation>
 
 		</ActiveObjectClass>
@@ -3000,14 +5833,14 @@ if (windSpeed < 3) {
 		<Outputs>
 		</Outputs>
 	</RunConfiguration>
-	<Experiments>	
+	<Experiments>
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1729440188669">
 			<Id>1729440188678</Id>
 			<Name><![CDATA[Simulation]]></Name>
 			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
 			<MaximumMemory>512</MaximumMemory>
-			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
@@ -3038,7 +5871,7 @@ if (windSpeed < 3) {
 				</Text>
 			</Presentation>
 
-			<Parameters>			
+			<Parameters>
 				<Parameter>
 					<ParameterName><![CDATA[casaConsumo]]></ParameterName>
 				</Parameter>
@@ -3048,15 +5881,600 @@ if (windSpeed < 3) {
 				<Parameter>
 					<ParameterName><![CDATA[cantGen]]></ParameterName>
 				</Parameter>
-			</Parameters>			
+			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[wind_farm_project : Simulation]]></Title>	
+				<Title><![CDATA[wind_farm_project : Simulation]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
 			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<InitialDate><![CDATA[1729382400000]]></InitialDate>
+				<InitialTime><![CDATA[0.0]]></InitialTime>
+				<FinalDate><![CDATA[1760918400000]]></FinalDate>
+				<FinalTime><![CDATA[365.0]]></FinalTime>
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>
+		<!--   =========   Simulation Experiment   ========  -->
+		<SimulationExperiment ActiveObjectClassId="1732235023951">
+			<Id>1732235152826</Id>
+			<Name><![CDATA[Simulation1]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>fixedSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+
+			<Presentation>
+				<Text>
+					<Id>1732235152828</Id>
+					<Name><![CDATA[text]]></Name>
+					<X>50</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-12490271</Color>
+					<Text><![CDATA[testing4]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>24</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[casaConsumo]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxUtilizacion]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[cantGen]]></ParameterName>
+				</Parameter>
+			</Parameters>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
+				<Title><![CDATA[testing4 : Simulation1]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+				<RealTimeScale>1.0</RealTimeScale>
+			</PresentationProperties>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<InitialDate><![CDATA[1729382400000]]></InitialDate>
+				<InitialTime><![CDATA[0.0]]></InitialTime>
+				<FinalDate><![CDATA[1760918400000]]></FinalDate>
+				<FinalTime><![CDATA[365.0]]></FinalTime>
+			</ModelTimeProperties>
+			<BypassInitialScreen>true</BypassInitialScreen>
+		</SimulationExperiment>
+		<!--   =========  Parameter Variation Experiment   ========  -->
+		<ParamVariationExperiment ActiveObjectClassId="1729440188669">
+			<Id>1732544430392</Id>
+			<Name><![CDATA[ParametersVariation]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<AfterSimulationRunCode><![CDATA[powerGeneratedHistogram.add(root.powerGeneratedO);
+windSpeedHistogram.add(root.windSpeedO);
+housesHistogram.add(root.housesO);
+utilizationRateHistogram.add(root.utilizationRateO);
+]]></AfterSimulationRunCode>
+			<SeedValue>1</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+			<AnalysisData>
+    			<HistogramData>
+					<Id>1732544458915</Id>
+					<Name><![CDATA[powerGeneratedHistogram]]></Name>
+					<X>270</X><Y>130</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+    			<HistogramData>
+					<Id>1732544570143</Id>
+					<Name><![CDATA[windSpeedHistogram]]></Name>
+					<X>280</X><Y>440</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+    			<HistogramData>
+					<Id>1732556417618</Id>
+					<Name><![CDATA[housesHistogram]]></Name>
+					<X>850</X><Y>130</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+    			<HistogramData>
+					<Id>1732581898405</Id>
+					<Name><![CDATA[utilizationRateHistogram]]></Name>
+					<X>850</X><Y>430</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+			</AnalysisData>
+
+			<Presentation>
+    			<Histogram>
+					<Id>1732544554243</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>10</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>false</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732544554245</Id>
+					<Expression><![CDATA[powerGeneratedHistogram]]></Expression>
+						<ColorPDF>-7667573</ColorPDF>
+						<ColorCDF>-23296</ColorCDF>
+						<ColorLowPercent>-12004916</ColorLowPercent>
+						<ColorHighPercent>-8097537</ColorHighPercent>
+						<ColorMean>-4343957</ColorMean>
+						<LineWidth>1</LineWidth>						
+						<Title><![CDATA[powerGeneratedHistogram]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+    			<Histogram>
+					<Id>1732544585436</Id>
+					<Name><![CDATA[chart1]]></Name>
+					<X>10</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>false</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732544585438</Id>
+					<Expression><![CDATA[windSpeedHistogram]]></Expression>
+						<ColorPDF>-2448096</ColorPDF>
+						<ColorCDF>-9728477</ColorCDF>
+						<ColorLowPercent>-4565549</ColorLowPercent>
+						<ColorHighPercent>-2354116</ColorHighPercent>
+						<ColorMean>-16728065</ColorMean>
+						<LineWidth>1</LineWidth>						
+						<Title><![CDATA[windSpeed]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+    			<Histogram>
+					<Id>1732556442524</Id>
+					<Name><![CDATA[chart2]]></Name>
+					<X>600</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>false</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732556442526</Id>
+					<Expression><![CDATA[housesHistogram]]></Expression>
+						<ColorPDF>-8097537</ColorPDF>
+						<ColorCDF>-60269</ColorCDF>
+						<ColorLowPercent>-12799119</ColorLowPercent>
+						<ColorHighPercent>-9807155</ColorHighPercent>
+						<ColorMean>-29696</ColorMean>
+						<LineWidth>1</LineWidth>						
+						<Title><![CDATA[housesHistogram]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+    			<Histogram>
+					<Id>1732581920483</Id>
+					<Name><![CDATA[chart3]]></Name>
+					<X>600</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>false</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732581920485</Id>
+					<Expression><![CDATA[utilizationRateHistogram]]></Expression>
+						<ColorPDF>-16711936</ColorPDF>
+						<ColorCDF>-6632142</ColorCDF>
+						<ColorLowPercent>-3137392</ColorLowPercent>
+						<ColorHighPercent>-32944</ColorHighPercent>
+						<ColorMean>-14774017</ColorMean>
+						<LineWidth>1</LineWidth>						
+						<Title><![CDATA[utilizationRateHistogram]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+				<Text>
+					<Id>1732582117478</Id>
+					<Name><![CDATA[t1]]></Name>
+					<X>650</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Tasa de utilizacion (%)]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732582189461</Id>
+					<Name><![CDATA[t2]]></Name>
+					<X>660</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Casas Abastecidas]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732582219293</Id>
+					<Name><![CDATA[t3]]></Name>
+					<X>60</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Poder generado (kw/h)]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732582256421</Id>
+					<Name><![CDATA[t4]]></Name>
+					<X>50</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Velocidad del viento (m/s)]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<AllowParallelEvaluations>true</AllowParallelEvaluations>
+			<UseFreeformParameters>false</UseFreeformParameters>
+			<NumberOfRuns>10</NumberOfRuns>
+			<FreeformParamValue>	
+				<Id>1731329211642</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1731939988882</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1731939999696</Id>
+			</FreeformParamValue>
+			<RangeVariationParamValue>	
+				<Id>1731329211642</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1731939988882</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1731939999696</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
 				<InitialDate><![CDATA[1729382400000]]></InitialDate>	
@@ -3064,8 +6482,23 @@ if (windSpeed < 3) {
 				<FinalDate><![CDATA[1760918400000]]></FinalDate>	
 				<FinalTime><![CDATA[365.0]]></FinalTime>	
 			</ModelTimeProperties>
-			<BypassInitialScreen>true</BypassInitialScreen>
-		</SimulationExperiment>	
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<Title><![CDATA[testing4 : ParametersVariation]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+			</PresentationProperties>
+			<ReplicationsProperties>
+				<UseReplication>true</UseReplication>
+				<FixedReplicationsNumber>true</FixedReplicationsNumber>
+				<ReplicationPerIteration>100</ReplicationPerIteration>
+				<MinimumReplication>2</MinimumReplication>
+				<MaximumReplication>10</MaximumReplication>
+				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
+				<ErrorPercent>0.5</ErrorPercent>
+				<ExpressionForConfidenceComputation><![CDATA[0]]></ExpressionForConfidenceComputation>
+			</ReplicationsProperties>
+		</ParamVariationExperiment>	
 	</Experiments>
 	<ModelResources>
 		<Resource>
