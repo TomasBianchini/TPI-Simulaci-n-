@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 *************************************************
-	         AnyLogic Project File 
-*************************************************	         
+	         AnyLogic Project File
+*************************************************
 -->
-<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.0.202404161236" AlpVersion="8.9.0">
+<AnyLogicWorkspace WorkspaceVersion="1.9" AnyLogicVersion="8.9.3.202411171557" AlpVersion="8.9.2">
 <Model>
 	<Id>1729440188666</Id>
-	<Name><![CDATA[testing4]]></Name>
+	<Name><![CDATA[PET]]></Name>
 	<EngineVersion>6</EngineVersion>
 	<JavaPackageName><![CDATA[wind_farm_project]]></JavaPackageName>
 	<ModelTimeUnit><![CDATA[Day]]></ModelTimeUnit>
+	
+	<Folders>
+		
+	</Folders>
 	<ActiveObjectClasses>
 		<!--   =========   Active Object Class   ========  -->
 		<ActiveObjectClass>
@@ -68,9 +72,7 @@
 					<RowsCountCode><![CDATA[100]]></RowsCountCode>
 					<NeigborhoodType>MOORE</NeigborhoodType>
 					<LayoutType>USER_DEF</LayoutType>
-					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
 					<NetworkType>USER_DEF</NetworkType>
-					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
 					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
 					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
@@ -107,6 +109,264 @@
 			</ScaleRuler>
 			<CurrentLevel>1729440188676</CurrentLevel>
 			<ConnectionsId>1729440188670</ConnectionsId>
+			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1734071095473</Id>
+					<Name><![CDATA[windSpeed]]></Name>
+					<X>390</X><Y>-40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1731329211642</Id>
+					<Name><![CDATA[casaConsumo]]></Name>
+					<X>130</X><Y>620</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[10.95890411]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1731329211640</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1731939988882</Id>
+					<Name><![CDATA[maxUtilizacion]]></Name>
+					<X>130</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[double]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[3000]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1731939988880</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+				<Variable Class="Parameter">
+					<Id>1731939999696</Id>
+					<Name><![CDATA[cantGen]]></Name>
+					<X>130</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" ModificatorType="STATIC">
+						<Type><![CDATA[int]]></Type>
+						<UnitType><![CDATA[NONE]]></UnitType>
+						<SdArray>false</SdArray>
+						<DefaultValue Class="CodeValue">
+							<Code><![CDATA[17]]></Code>
+						</DefaultValue>
+						<ParameterEditor>
+							<Id>1731939999694</Id>
+							<EditorContolType>TEXT_BOX</EditorContolType>
+							<MinSliderValue><![CDATA[0]]></MinSliderValue>
+							<MaxSliderValue><![CDATA[100]]></MaxSliderValue>
+							<DelimeterType>NO_DELIMETER</DelimeterType>
+						</ParameterEditor>
+					</Properties>                 
+				</Variable>
+			</Variables>
+			<Events>
+				<Event>
+					<Id>1734070857246</Id>
+					<Name><![CDATA[assignSpeed]]></Name>
+					<X>390</X><Y>-80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[YEAR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_YEAR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1727740800000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[band=false;]]></Condition>
+					</Properties>
+					<Action><![CDATA[double scale = 8.03863;
+double shape = 2.10833;
+windSpeed = weibull(scale, shape);
+
+for (int i = 0; i < turbines.size(); i++) {
+    turbines(0).computePowerGenerated(windSpeed, i);
+}
+
+
+vientoPromedio.add(windSpeed);
+totalPotenciaPromedio.add(turbines.TotalPower()*cantGen);
+double tasa = turbines.TotalPower() / maxUtilizacion;
+tasaUtilizacion.add(tasa);
+double casas = (turbines.TotalPower()*24*cantGen) / casaConsumo;
+casasAbastecidasPromedio.add(casas);
+
+graph01.updateData();
+graph02.updateData();
+graph03.updateData();]]></Action>
+				</Event>
+				<Event>
+					<Id>1734081236618</Id>
+					<Name><![CDATA[breakDown]]></Name>
+					<X>30</X><Y>-210</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="rate" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1734163200000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[int decomposed = uniform_discr(0, 16);
+if (turbines(decomposed).isDecomposed == false) {
+	turbines(decomposed).breakingDown(decomposed);
+}
+]]></Action>
+				</Event>
+			</Events>
+			<AnalysisData>
+    			<Statistics>
+					<Id>1731330012355</Id>
+					<Name><![CDATA[casasAbastecidasPromedio]]></Name>
+					<X>510</X><Y>660</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+				</Statistics>
+    			<Statistics>
+					<Id>1731330134897</Id>
+					<Name><![CDATA[tasaUtilizacion]]></Name>
+					<X>510</X><Y>620</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+				</Statistics>
+    			<Statistics>
+					<Id>1731330357961</Id>
+					<Name><![CDATA[vientoPromedio]]></Name>
+					<X>780</X><Y>620</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+				</Statistics>
+    			<Statistics>
+					<Id>1732547536627</Id>
+					<Name><![CDATA[totalPotenciaPromedio]]></Name>
+					<X>781</X><Y>661</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1731398400000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Discrete>true</Discrete>
+				</Statistics>
+			</AnalysisData>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1729440188670</Id>
@@ -157,7 +417,7 @@
 					</Parameters>
 					<ReplicationFlag>true</ReplicationFlag>
 					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
+						<Code><![CDATA[cantGen]]></Code>
 					</Replication>
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
 					<StatisticsItem>
@@ -167,76 +427,32 @@
 						<Expression><![CDATA[turbines.stream().mapToDouble(t -> t.powerGenerated).sum()]]></Expression>
 						<Condition><![CDATA[]]></Condition>
 					</StatisticsItem>
-					<InEnvironment>true</InEnvironment>	
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
+					<StatisticsItem>
+						<Id>1732546148884</Id>
+						<Name><![CDATA[TotalPowerSum]]></Name>
+						<Type>sum</Type>
+						<Expression><![CDATA[turbines.stream().mapToDouble(t -> t.powerGenerated).sum()]]></Expression>
+						<Condition><![CDATA[]]></Condition>
+					</StatisticsItem>
+					<InEnvironment>true</InEnvironment>
+					<InitialLocationType>XYZ</InitialLocationType>
 					<ColumnCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</ColumnCode>
 					<RowCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
 					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
 					<LocationNameCode Class="CodeValue">
 						<Code><![CDATA[""]]></Code>
 					</LocationNameCode>
-					<InitializationType>LOAD_FROM_DATABASE</InitializationType>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
 					<InitializationDatabaseTableQuery>
 						<TableReference>
-							<PackageName><![CDATA[wind_farm_project]]></PackageName>
-							<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
 						</TableReference>
 					</InitializationDatabaseTableQuery>
 					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
 					<QuantityColumn>
 					</QuantityColumn>
-					<ParameterToDatabaseColumnMapping>
-						<Item>
-							<Key>
-								<PackageName><![CDATA[wind_farm_project]]></PackageName>
-								<ClassName><![CDATA[Turbine]]></ClassName>
-								<ItemName><![CDATA[id]]></ItemName>
-							</Key>
-							<Value>
-								<PackageName><![CDATA[wind_farm_project]]></PackageName>
-								<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
-								<ItemName><![CDATA[id]]></ItemName>
-							</Value>
-						</Item>
-						<Item>
-							<Key>
-								FAKE_PARAMETER_GIS_LOCATION_LONGITUDE_xjal
-							</Key>
-							<Value>
-								<PackageName><![CDATA[wind_farm_project]]></PackageName>
-								<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
-								<ItemName><![CDATA[x]]></ItemName>
-							</Value>
-						</Item>
-						<Item>
-							<Key>
-								FAKE_PARAMETER_GIS_LOCATION_LATITUDE_xjal
-							</Key>
-							<Value>
-								<PackageName><![CDATA[wind_farm_project]]></PackageName>
-								<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
-								<ItemName><![CDATA[y]]></ItemName>
-							</Value>
-						</Item>	
-					</ParameterToDatabaseColumnMapping>
 				</EmbeddedObject>
 			</EmbeddedObjects>
 
@@ -318,7 +534,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729903559465</Id>
 					<Name><![CDATA[wind_blades]]></Name>
@@ -363,7 +579,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -435,7 +651,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904510504</Id>
 					<Name><![CDATA[wind_blades1]]></Name>
@@ -480,7 +696,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -529,7 +745,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904516090</Id>
 					<Name><![CDATA[wind_blades2]]></Name>
@@ -574,7 +790,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -623,7 +839,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904518918</Id>
 					<Name><![CDATA[wind_blades3]]></Name>
@@ -668,7 +884,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -717,7 +933,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904521935</Id>
 					<Name><![CDATA[wind_blades4]]></Name>
@@ -762,7 +978,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -811,7 +1027,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904524820</Id>
 					<Name><![CDATA[wind_blades5]]></Name>
@@ -856,7 +1072,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -905,7 +1121,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904559739</Id>
 					<Name><![CDATA[wind_blades6]]></Name>
@@ -950,7 +1166,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -999,7 +1215,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904562969</Id>
 					<Name><![CDATA[wind_blades7]]></Name>
@@ -1044,7 +1260,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1093,7 +1309,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904565619</Id>
 					<Name><![CDATA[wind_blades8]]></Name>
@@ -1138,7 +1354,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1187,7 +1403,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904571363</Id>
 					<Name><![CDATA[wind_blades9]]></Name>
@@ -1232,7 +1448,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1281,7 +1497,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904574379</Id>
 					<Name><![CDATA[wind_blades10]]></Name>
@@ -1326,7 +1542,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1375,7 +1591,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904578079</Id>
 					<Name><![CDATA[wind_blades11]]></Name>
@@ -1420,7 +1636,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1469,7 +1685,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904607848</Id>
 					<Name><![CDATA[wind_blades12]]></Name>
@@ -1514,7 +1730,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1563,7 +1779,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904612391</Id>
 					<Name><![CDATA[wind_blades13]]></Name>
@@ -1608,7 +1824,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1657,7 +1873,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904615447</Id>
 					<Name><![CDATA[wind_blades14]]></Name>
@@ -1702,7 +1918,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1751,7 +1967,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904618777</Id>
 					<Name><![CDATA[wind_blades15]]></Name>
@@ -1796,7 +2012,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1841,11 +2057,11 @@
 					<AutoScale>true</AutoScale>
 					<Scale>0.07</Scale>
 					<Rotation>0.0</Rotation>
-					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<AxisOrder>ZXY_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Group>
 					<Id>1729904622288</Id>
 					<Name><![CDATA[wind_blades16]]></Name>
@@ -1890,7 +2106,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Group>
@@ -1945,14 +2161,14 @@
 				</Control>
     			<TimePlot>
 					<Id>1729448313968</Id>
-					<Name><![CDATA[windSpeedT0]]></Name>
+					<Name><![CDATA[graph01]]></Name>
 					<X>750</X><Y>30</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<AutoUpdate>true</AutoUpdate>
+					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1727740800000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
@@ -2000,7 +2216,7 @@
 					<Id>1729448316080</Id>
 					<Expression><![CDATA[turbines(i).windSpeed]]></Expression>
 					<Color>-6632142</Color>
-					<Expression2><![CDATA[turbines(0).windSpeed]]></Expression2>
+					<Expression2><![CDATA[windSpeed]]></Expression2>
 					<Expression2Flag>true</Expression2Flag>
 						<PointStyle>NONE</PointStyle>
 						<LineWidth>1.0</LineWidth>
@@ -2012,14 +2228,14 @@
     			</TimePlot>
     			<TimePlot>
 					<Id>1729745100639</Id>
-					<Name><![CDATA[windSpeedT1]]></Name>
+					<Name><![CDATA[graph02]]></Name>
 					<X>750</X><Y>210</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<AutoUpdate>true</AutoUpdate>
+					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1727740800000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
@@ -2079,14 +2295,14 @@
     			</TimePlot>
     			<TimePlot>
 					<Id>1729745958893</Id>
-					<Name><![CDATA[windSpeedT2]]></Name>
+					<Name><![CDATA[graph03]]></Name>
 					<X>750</X><Y>390</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<AutoUpdate>true</AutoUpdate>
+					<AutoUpdate>false</AutoUpdate>
 					<OccurrenceAtTime>true</OccurrenceAtTime>
 					<OccurrenceDate>1727740800000</OccurrenceDate>
 					<OccurrenceTime Class="CodeUnitValue">
@@ -2134,7 +2350,7 @@
 					<Id>1729745958890</Id>
 					<Expression><![CDATA[turbines(i).windSpeed]]></Expression>
 					<Color>-5952982</Color>
-					<Expression2><![CDATA[turbines.TotalPower()]]></Expression2>
+					<Expression2><![CDATA[turbines.TotalPower()*cantGen]]></Expression2>
 					<Expression2Flag>true</Expression2Flag>
 						<PointStyle>NONE</PointStyle>
 						<LineWidth>1.0</LineWidth>
@@ -2180,7 +2396,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910716695</Id>
 					<Name><![CDATA[transmission_tower_3]]></Name>
@@ -2217,7 +2433,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910718549</Id>
 					<Name><![CDATA[transmission_tower_4]]></Name>
@@ -2254,7 +2470,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910766882</Id>
 					<Name><![CDATA[cow]]></Name>
@@ -2299,7 +2515,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910778523</Id>
 					<Name><![CDATA[cow1]]></Name>
@@ -2344,7 +2560,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910867927</Id>
 					<Name><![CDATA[transmission_tower_6]]></Name>
@@ -2381,7 +2597,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729910961796</Id>
 					<Name><![CDATA[airliner]]></Name>
@@ -2406,7 +2622,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729911111457</Id>
 					<Name><![CDATA[lorry]]></Name>
@@ -2443,7 +2659,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 				<Figure3D>
 					<Id>1729911124301</Id>
 					<Name><![CDATA[hangar_2]]></Name>
@@ -2480,7 +2696,7 @@
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Level>
@@ -2496,7 +2712,6 @@
 					<EmbeddedIcon>false</EmbeddedIcon>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
-					<DrawingMode>AGENT_CURRENT_POSITION</DrawingMode>
 					<ScaleType>AUTOMATICALLY_CALCULATED</ScaleType>
 					<GISScaleForRealEmbeddedObjectPresentationSize>1000</GISScaleForRealEmbeddedObjectPresentationSize>
 					<GISScaleForFixedEmbeddedObjectPresentationSize>1000000000</GISScaleForFixedEmbeddedObjectPresentationSize>
@@ -2562,9 +2777,7 @@
 					<RowsCountCode><![CDATA[100]]></RowsCountCode>
 					<NeigborhoodType>MOORE</NeigborhoodType>
 					<LayoutType>USER_DEF</LayoutType>
-					<LayoutTypeApplyOnStartup>true</LayoutTypeApplyOnStartup>
 					<NetworkType>USER_DEF</NetworkType>
-					<NetworkTypeApplyOnStartup>true</NetworkTypeApplyOnStartup>
 					<ConnectionsPerAgentCode><![CDATA[2]]></ConnectionsPerAgentCode>
 					<ConnectionsRangeCode><![CDATA[50]]></ConnectionsRangeCode>
 					<NeighborLinkFractionCode><![CDATA[0.95]]></NeighborLinkFractionCode>
@@ -2603,8 +2816,8 @@
 			<ConnectionsId>1729440289470</ConnectionsId>
 			<Variables>
 				<Variable Class="PlainVariable">
-					<Id>1729444198646</Id>
-					<Name><![CDATA[windSpeed]]></Name>
+					<Id>1729444628776</Id>
+					<Name><![CDATA[powerGenerated]]></Name>
 					<X>50</X><Y>90</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
@@ -2615,15 +2828,30 @@
 					</Properties>
 				</Variable>
 				<Variable Class="PlainVariable">
-					<Id>1729444628776</Id>
-					<Name><![CDATA[powerGenerated]]></Name>
-					<X>50</X><Y>120</Y>
+					<Id>1734081502349</Id>
+					<Name><![CDATA[isDecomposed]]></Name>
+					<X>560</X><Y>320</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
-						<Type><![CDATA[double]]></Type>        
+						<Type><![CDATA[boolean]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[false]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1734083228111</Id>
+					<Name><![CDATA[name]]></Name>
+					<X>560</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
@@ -2652,22 +2880,31 @@
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
 					<Id>1729440442836</Id>
 					<Name><![CDATA[on]]></Name>
-					<X>240</X><Y>100</Y>
+					<X>300</X><Y>90</Y>
 					<Label><X>50</X><Y>25</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="120" Height="50">
-						<EntryAction><![CDATA[if (getIndex()==0) {
-main.wind_turbine_tower.setColor("MA_Color_000", yellowGreen);
-}]]></EntryAction>
 						<FillColor>-6632142</FillColor>
+					</Properties>
+				</StatechartElement>
+				<StatechartElement Class="State" ParentState="ROOT_NODE">
+					<Id>1734081444326</Id>
+					<Name><![CDATA[decomposed]]></Name>
+					<X>300</X><Y>200</Y>
+					<Label><X>20</X><Y>25</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties Width="120" Height="50">
+						<FillColor>-65536</FillColor>
 					</Properties>
 				</StatechartElement>
 				<StatechartElement Class="EntryPoint" ParentState="ROOT_NODE">
 					<Id>1729440440803</Id>
 					<Name><![CDATA[statechart]]></Name>
-					<X>300</X><Y>50</Y>
+					<X>360</X><Y>40</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2679,61 +2916,377 @@ main.wind_turbine_tower.setColor("MA_Color_000", yellowGreen);
 					<Properties Target="1729440442836">
 					</Properties>	
 				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1734081463601</Id>
+					<Name><![CDATA[transition]]></Name>
+					<X>360</X><Y>140</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>60</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1729440442836" Target="1734081444326" Trigger="condition">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[isDecomposed == true;]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
+				<StatechartElement Class="Transition" ParentState="ROOT_NODE">
+					<Id>1734082965201</Id>
+					<Name><![CDATA[transition1]]></Name>
+					<X>420</X><Y>230</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>0</Y></Point>
+						<Point><X>50</X><Y>-120</Y></Point>
+						<Point><X>0</X><Y>-120</Y></Point>
+					</Points>
+					<IconOffset>20.0</IconOffset>
+					<Properties Source="1734081444326" Target="1729440442836" Trigger="timeout">
+						<Action><![CDATA[beingOn(name);]]></Action>
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[7]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</Timeout>
+						<Condition><![CDATA[true]]></Condition>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[100]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
+						</Rate>
+						<MessageType><![CDATA[Object]]></MessageType>
+						<DefaultTransition>true</DefaultTransition>
+						<FilterType><![CDATA[unconditionally]]></FilterType>
+						<EqualsExpression><![CDATA["text"]]></EqualsExpression>
+						<SatisfiesExpression><![CDATA[true]]></SatisfiesExpression>
+					</Properties>	
+				</StatechartElement>
 			</StatechartElements>
 			<Events>
 				<Event>
-					<Id>1729444466411</Id>
-					<Name><![CDATA[assignSpeed]]></Name>
-					<X>100</X><Y>50</Y>
+					<Id>1734083046822</Id>
+					<Name><![CDATA[initialState]]></Name>
+					<X>560</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
+					<Properties TriggerType="timeout" Mode="occuresOnce">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[YEAR]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</Timeout>
 						<Rate Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_YEAR]]></Unit>
+							<Unit Class="RateUnits"><![CDATA[PER_DAY]]></Unit>
 						</Rate>
 						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1727740800000</OccurrenceDate>
+						<OccurrenceDate>1734163200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
+							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[toTimeoutInCalendar(HOUR, 23)]]></Code>
+							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
 						</RecurrenceCode>
-						<Condition><![CDATA[band=false;]]></Condition>
+						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[double scale = 8.03863;
-double shape = 2.10833;
-windSpeed = weibull(scale, shape);
-
-if (windSpeed < 3) {
-    powerGenerated = 0;
-} else if (windSpeed >= 3 && windSpeed < 3.5) {
-    powerGenerated = 84.06512 * windSpeed - 232.14536;
-} else if (windSpeed >= 3.5 && windSpeed < 11.5) {
-    powerGenerated = -3.88267 * Math.pow(windSpeed, 3) 
-                    + 117.28367 * Math.pow(windSpeed, 2) 
-                    - 688.77967 * windSpeed + 1202.55606;
-} else if (windSpeed >= 11.5 && windSpeed < 12) {
-    powerGenerated = 225.41204 * windSpeed + 295.05552;
-} else if (windSpeed >= 12 && windSpeed <= 25) {
-    powerGenerated = 3000;
-} else {
-    powerGenerated = 0;
-}
-
-//traceln("Turbine: " + (getIndex() + 0) + ", Wind Speed: " + windSpeed + ", Power Generated: " + powerGenerated);
-]]></Action>
+					<Action><![CDATA[colouredOn();]]></Action>
 				</Event>
 			</Events>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1734070917994</Id>
+					<Name><![CDATA[computePowerGenerated]]></Name>
+					<X>50</X><Y>130</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[windSpeed]]></Name>
+						<Type><![CDATA[double]]></Type>
+					</Parameter>
+					<Parameter>
+						<Name><![CDATA[i]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[if (windSpeed < 3 || isDecomposed == true) {
+	    powerGenerated = 0;
+	} else if (windSpeed >= 3 && windSpeed < 3.5) {
+	    double v = windSpeed - 3.0;
+	    powerGenerated = 44.2611 * Math.pow(v, 3) - 55.8316 * Math.pow(v, 2) + 99.1505 * v + 20.0500;
+	} else if (windSpeed >= 3.5 && windSpeed < 4.0) {
+	    double v = windSpeed - 3.5;
+	    powerGenerated = 44.2611 * Math.pow(v, 3) + 10.5600 * Math.pow(v, 2) + 76.5147 * v + 61.2000;
+	} else if (windSpeed >= 4.0 && windSpeed < 4.5) {
+	    double v = windSpeed - 4.0;
+	    powerGenerated = -77.7853 * Math.pow(v, 3) + 76.9516 * Math.pow(v, 2) + 120.2705 * v + 107.6300;
+	} else if (windSpeed >= 4.5 && windSpeed < 5.0) {
+	    double v = windSpeed - 4.5;
+	    powerGenerated = 106.4000 * Math.pow(v, 3) - 39.7263 * Math.pow(v, 2) + 138.8832 * v + 177.2800;
+	} else if (windSpeed >= 5.0 && windSpeed < 5.5) {
+	    double v = windSpeed - 5.0;
+	    powerGenerated = -128.2948 * Math.pow(v, 3) + 119.8737 * Math.pow(v, 2) + 178.9568 * v + 250.0900;
+	} else if (windSpeed >= 5.5 && windSpeed < 6.0) {
+	    double v = windSpeed - 5.5;
+	    powerGenerated = 170.4591 * Math.pow(v, 3) - 72.5685 * Math.pow(v, 2) + 202.6095 * v + 353.5000;
+	} else if (windSpeed >= 6.0 && windSpeed < 6.5) {
+	    double v = windSpeed - 6.0;
+	    powerGenerated = -182.1815 * Math.pow(v, 3) + 183.1201 * Math.pow(v, 2) + 257.8853 * v + 457.9700;
+	} else if (windSpeed >= 6.5 && windSpeed < 7.0) {
+	    double v = windSpeed - 6.5;
+	    powerGenerated = 170.0269 * Math.pow(v, 3) - 90.1521 * Math.pow(v, 2) + 304.3693 * v + 609.9200;
+	} else if (windSpeed >= 7.0 && windSpeed < 7.5) {
+	    double v = windSpeed - 7.0;
+	    powerGenerated = -177.2061 * Math.pow(v, 3) + 164.8883 * Math.pow(v, 2) + 341.7374 * v + 760.8200;
+	} else if (windSpeed >= 7.5 && windSpeed < 8.0) {
+	    double v = windSpeed - 7.5;
+	    powerGenerated = 217.9977 * Math.pow(v, 3) - 100.9210 * Math.pow(v, 2) + 373.7211 * v + 950.7600;
+	} else if (windSpeed >= 8.0 && windSpeed < 8.5) {
+	    double v = windSpeed - 8.0;
+	    powerGenerated = -213.5045 * Math.pow(v, 3) + 226.0755 * Math.pow(v, 2) + 436.2984 * v + 1139.6400;
+	} else if (windSpeed >= 8.5 && windSpeed < 9.0) {
+	    double v = windSpeed - 8.5;
+	    powerGenerated = 163.2204 * Math.pow(v, 3) - 94.1812 * Math.pow(v, 2) + 502.2455 * v + 1387.6200;
+	} else if (windSpeed >= 9.0 && windSpeed < 9.5) {
+	    double v = windSpeed - 9.0;
+	    powerGenerated = -135.5369 * Math.pow(v, 3) + 150.6493 * Math.pow(v, 2) + 530.4796 * v + 1635.6000;
+	} else if (windSpeed >= 9.5 && windSpeed < 10.0) {
+	    double v = windSpeed - 9.5;
+	    powerGenerated = 66.6874 * Math.pow(v, 3) - 52.6561 * Math.pow(v, 2) + 579.4762 * v + 1921.5600;
+	} else if (windSpeed >= 10.0 && windSpeed < 10.5) {
+	    double v = windSpeed - 10.0;
+	    powerGenerated = -89.0527 * Math.pow(v, 3) + 47.3750 * Math.pow(v, 2) + 576.8357 * v + 2206.4700;
+	} else if (windSpeed >= 10.5 && windSpeed < 11.0) {
+	    double v = windSpeed - 10.5;
+	    powerGenerated = -73.4367 * Math.pow(v, 3) - 86.2040 * Math.pow(v, 2) + 557.4212 * v + 2495.6000;
+	} else if (windSpeed >= 11.0 && windSpeed < 11.5) {
+	    double v = windSpeed - 11.0;
+	    powerGenerated = 36.6393 * Math.pow(v, 3) - 196.3590 * Math.pow(v, 2) + 416.1397 * v + 2743.5800;
+	} else if (windSpeed >= 11.5 && windSpeed < 12.0) {
+	    double v = windSpeed - 11.5;
+	    powerGenerated = 36.6393 * Math.pow(v, 3) - 141.4000 * Math.pow(v, 2) + 247.2602 * v + 2907.1400;
+	} else if (windSpeed >= 12 && windSpeed <= 25) {
+	    powerGenerated = 3000;
+	} else {
+	    powerGenerated = 0;
+	}
+	
+if (i == 0) {
+	//traceln("Día: " + time());
+	//traceln("T0 Wind Speed: " + windSpeed + ", Power Generated: " + powerGenerated);
+	//traceln("Turbine: " + (getIndex() + 0) + ", Wind Speed: " + windSpeed + ", Power Generated: " + powerGenerated);
+}
+
+if (i == 1) {
+	//traceln("T1 Wind Speed: " + windSpeed + ", Power Generated: " + powerGenerated);
+}
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1734082025442</Id>
+					<Name><![CDATA[colouredOn]]></Name>
+					<X>560</X><Y>120</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[main.wind_turbine_tower.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower1.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower2.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower3.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower4.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower5.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower6.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower7.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower8.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower9.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower10.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower11.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower12.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower13.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower14.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower15.setColor("MA_Color_000", yellowGreen);
+main.wind_turbine_tower16.setColor("MA_Color_000", yellowGreen);
+]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1734082195694</Id>
+					<Name><![CDATA[breakingDown]]></Name>
+					<X>560</X><Y>160</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[i]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[isDecomposed = true;
+
+if (i == 0) {
+        main.wind_turbine_tower.setColor("MA_Color_000", red);
+    } else if (i >= 1 && i <= 16) {
+        switch (i) {
+            case 1:
+                main.wind_turbine_tower1.setColor("MA_Color_000", red);
+                break;
+            case 2:
+                main.wind_turbine_tower2.setColor("MA_Color_000", red);
+                break;
+            case 3:
+                main.wind_turbine_tower3.setColor("MA_Color_000", red);
+                break;
+            case 4:
+                main.wind_turbine_tower4.setColor("MA_Color_000", red);
+                break;
+            case 5:
+                main.wind_turbine_tower5.setColor("MA_Color_000", red);
+                break;
+            case 6:
+                main.wind_turbine_tower6.setColor("MA_Color_000", red);
+                break;
+            case 7:
+                main.wind_turbine_tower7.setColor("MA_Color_000", red);
+                break;
+            case 8:
+                main.wind_turbine_tower8.setColor("MA_Color_000", red);
+                break;
+            case 9:
+                main.wind_turbine_tower9.setColor("MA_Color_000", red);
+                break;
+            case 10:
+                main.wind_turbine_tower10.setColor("MA_Color_000", red);
+                break;
+            case 11:
+                main.wind_turbine_tower11.setColor("MA_Color_000", red);
+                break;
+            case 12:
+                main.wind_turbine_tower12.setColor("MA_Color_000", red);
+                break;
+            case 13:
+                main.wind_turbine_tower13.setColor("MA_Color_000", red);
+                break;
+            case 14:
+                main.wind_turbine_tower14.setColor("MA_Color_000", red);
+                break;
+            case 15:
+                main.wind_turbine_tower15.setColor("MA_Color_000", red);
+                break;
+            case 16:
+                main.wind_turbine_tower16.setColor("MA_Color_000", red);
+                break;
+        }
+    } else {
+        System.out.println("Invalid tower index: " + i);
+    }
+
+name = i;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1734083091572</Id>
+					<Name><![CDATA[beingOn]]></Name>
+					<X>560</X><Y>200</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[i]]></Name>
+						<Type><![CDATA[int]]></Type>
+					</Parameter>
+					<Body><![CDATA[traceln("HOLAAAAAAAAAAAAAAAAAA");
+
+isDecomposed = false;
+
+if (i == 0) {
+        main.wind_turbine_tower.setColor("MA_Color_000", yellowGreen);
+    } else if (i >= 1 && i <= 16) {
+        switch (i) {
+            case 1:
+                main.wind_turbine_tower1.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 2:
+                main.wind_turbine_tower2.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 3:
+                main.wind_turbine_tower3.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 4:
+                main.wind_turbine_tower4.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 5:
+                main.wind_turbine_tower5.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 6:
+                main.wind_turbine_tower6.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 7:
+                main.wind_turbine_tower7.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 8:
+                main.wind_turbine_tower8.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 9:
+                main.wind_turbine_tower9.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 10:
+                main.wind_turbine_tower10.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 11:
+                main.wind_turbine_tower11.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 12:
+                main.wind_turbine_tower12.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 13:
+                main.wind_turbine_tower13.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 14:
+                main.wind_turbine_tower14.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 15:
+                main.wind_turbine_tower15.setColor("MA_Color_000", yellowGreen);
+                break;
+            case 16:
+                main.wind_turbine_tower16.setColor("MA_Color_000", yellowGreen);
+                break;
+        }
+    } else {
+        System.out.println("Invalid tower index: " + i);
+    }
+    
+]]></Body>
+				</Function>
+			</Functions>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1729440289470</Id>
@@ -2820,14 +3373,14 @@ if (windSpeed < 3) {
 					<ApplyShading>true</ApplyShading>
 					<InternalLighting>OFF</InternalLighting>
 					<IgnoreSceneLights>false</IgnoreSceneLights>
-				</Figure3D>
+</Figure3D>
 			</Presentation>
 
 				</Level>
 			</Presentation>
 
 		</ActiveObjectClass>
-	</ActiveObjectClasses>	
+	</ActiveObjectClasses>
 	<DifferentialEquationsMethod>EULER</DifferentialEquationsMethod>
 	<MixedEquationsMethod>RK45_NEWTON</MixedEquationsMethod>
 	<AlgebraicEquationsMethod>MODIFIED_NEWTON</AlgebraicEquationsMethod>
@@ -2840,45 +3393,15 @@ if (windSpeed < 3) {
 		<Height>600</Height>
 	</Frame>
 	<Database>
-		<Logging>true</Logging>
+		<Logging>false</Logging>
 		<AutoExport>false</AutoExport>
-		<ShutdownCompact>true</ShutdownCompact>
+		<ShutdownCompact>false</ShutdownCompact>
 		<ImportSettings>
-			<ExternalConnection>
-				<Id>1729440287964</Id>
-				<Name><![CDATA[database]]></Name>
-				<X>0</X><Y>0</Y>
-				<Label><X>10</X><Y>0</Y></Label>
-				<PublicFlag>false</PublicFlag>
-				<PresentationFlag>true</PresentationFlag>
-				<ShowLabel>true</ShowLabel>
-				<DatabaseType>EXCEL_ACCESS</DatabaseType>
-				<ConnectionURL><![CDATA[]]></ConnectionURL>
-				<ConnectOnStartup>true</ConnectOnStartup>
-				<DatabaseName><![CDATA[]]></DatabaseName>
-				<ResourceReference>
-					<PackageName><![CDATA[wind_farm_project]]></PackageName>
-					<ClassName><![CDATA[C:/Users/Musimundo/Desktop/Marcos/UTN/4to/Simulación/TPI/wind_turbine_coordinates.xlsx]]></ClassName>
-				</ResourceReference>
-				<Host><![CDATA[localhost]]></Host>
-				<JdbcDriverClassName><![CDATA[net.sourceforge.jtds.jdbc.Driver]]></JdbcDriverClassName>
-				<Login><![CDATA[]]></Login>
-				<Password><![CDATA[]]></Password>
-			</ExternalConnection>
-			<TableImportSettings>
-				<TableReference>
-					<PackageName><![CDATA[wind_farm_project]]></PackageName>
-					<ClassName><![CDATA[turbinas_eolicas]]></ClassName>
-				</TableReference>
-				<ConnectionIndex>0</ConnectionIndex>
-				<ExternalTableName><![CDATA["turbinas_eolicas"]]></ExternalTableName>
-				<AutoImport>true</AutoImport>
-			</TableImportSettings>
 		</ImportSettings>
 		<ExportSettings>
 		</ExportSettings>
 	</Database>
-	
+
 	<RunConfiguration ActiveObjectClassId="1729440188669">
 		<Id>1729440188682</Id>
 		<Name><![CDATA[RunConfiguration]]></Name>
@@ -2903,7 +3426,7 @@ if (windSpeed < 3) {
 		<Outputs>
 		</Outputs>
 	</RunConfiguration>
-	<Experiments>	
+	<Experiments>
 		<!--   =========   Simulation Experiment   ========  -->
 		<SimulationExperiment ActiveObjectClassId="1729440188669">
 			<Id>1729440188678</Id>
@@ -2912,6 +3435,10 @@ if (windSpeed < 3) {
 			<MaximumMemory>512</MaximumMemory>
 			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
 			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<AfterSimulationRunCode><![CDATA[traceln(root.vientoPromedio.mean());
+traceln(root.totalPotenciaPromedio.mean());
+traceln(root.tasaUtilizacion.mean());
+traceln(root.casasAbastecidasPromedio.mean());]]></AfterSimulationRunCode>
 			<SeedValue>1</SeedValue>
 			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
 			<VmArgs><![CDATA[]]></VmArgs>
@@ -2941,34 +3468,665 @@ if (windSpeed < 3) {
 				</Text>
 			</Presentation>
 
-			<Parameters>			
-			</Parameters>			
+			<Parameters>
+				<Parameter>
+					<ParameterName><![CDATA[casaConsumo]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[maxUtilizacion]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[cantGen]]></ParameterName>
+				</Parameter>
+			</Parameters>
 			<PresentationProperties>
 				<EnableZoomAndPanning>true</EnableZoomAndPanning>
 				<ExecutionMode><![CDATA[realTimeScaled]]></ExecutionMode>
-				<Title><![CDATA[wind_farm_project : Simulation]]></Title>	
+				<Title><![CDATA[wind_farm_project : Simulation]]></Title>
 				<EnableDeveloperPanel>true</EnableDeveloperPanel>
 				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
 				<RealTimeScale>1.0</RealTimeScale>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Stop at specified time]]></StopOption>
-				<InitialDate><![CDATA[1729382400000]]></InitialDate>	
-				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1760918400000]]></FinalDate>	
-				<FinalTime><![CDATA[365.0]]></FinalTime>	
+				<InitialDate><![CDATA[1729382400000]]></InitialDate>
+				<InitialTime><![CDATA[1.0]]></InitialTime>
+				<FinalDate><![CDATA[1760832000000]]></FinalDate>
+				<FinalTime><![CDATA[365.0]]></FinalTime>
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
-		</SimulationExperiment>	
+		</SimulationExperiment>
+		<!--   =========  Parameter Variation Experiment   ========  -->
+		<ParamVariationExperiment ActiveObjectClassId="1729440188669">
+			<Id>1732544430392</Id>
+			<Name><![CDATA[ParametersVariation]]></Name>
+			<CommandLineArguments><![CDATA[]]></CommandLineArguments>
+			<MaximumMemory>512</MaximumMemory>
+			<RandomNumberGenerationType>randomSeed</RandomNumberGenerationType>
+			<CustomGeneratorCode>new Random()</CustomGeneratorCode>
+			<AfterSimulationRunCode><![CDATA[powerGeneratedHistogram.add(root.totalPotenciaPromedio.mean());
+windSpeedHistogram.add(root.vientoPromedio.mean());
+housesHistogram.add(root.casasAbastecidasPromedio.mean());
+utilizationRateHistogram.add(100*100*root.tasaUtilizacion.mean());
+
+//traceln(root.vientoPromedio.mean());
+//traceln(root.totalPotenciaPromedio.mean());
+//traceln(root.tasaUtilizacion.mean());
+//traceln(root.casasAbastecidasPromedio.mean());
+
+this.guardarResultados();]]></AfterSimulationRunCode>
+			<SeedValue>3030</SeedValue>
+			<SelectionModeForSimultaneousEvents>LIFO</SelectionModeForSimultaneousEvents>
+			<VmArgs><![CDATA[]]></VmArgs>
+			<LoadRootFromSnapshot>false</LoadRootFromSnapshot>
+			<Variables>
+				<Variable Class="CollectionVariable">
+					<Id>1734086720565</Id>
+					<Name><![CDATA[resultadosSimulacion]]></Name>
+					<X>30</X><Y>-80</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
+						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
+						<ElementClass><![CDATA[String]]></ElementClass>
+						<ValueElementClass><![CDATA[String]]></ValueElementClass>
+					</Properties>
+
+				</Variable>
+			</Variables>
+			<Functions>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1734086733500</Id>
+					<Name><![CDATA[guardarResultados]]></Name>
+					<X>30</X><Y>-40</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[Main main = (Main) getEngine().getRoot();
+
+String resultado = main.vientoPromedio.mean() + "," +
+                       main.totalPotenciaPromedio.mean() + "," +
+                       100*main.tasaUtilizacion.mean() + "," +
+                       main.casasAbastecidasPromedio.mean();
+    
+resultadosSimulacion.add(resultado);]]></Body>
+				</Function>
+			</Functions>
+			<Schedules>
+				<Schedule>
+					<Id>1734216374758</Id>
+					<Name><![CDATA[schedule]]></Name>
+					<X>80</X><Y>670</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ValueType>onOff</ValueType>
+					<UnitType><![CDATA[NONE]]></UnitType>
+					<DefaultValue>false</DefaultValue>
+					<RepresentationMode>intervals</RepresentationMode>
+					<RepresentationType>week</RepresentationType>
+					<FirstDayOfWeek>sunday</FirstDayOfWeek>
+					<TimeUnitsInterval>hours</TimeUnitsInterval>
+					<RepeatTime>86400000</RepeatTime>
+					<RepeatTimeInterval>days</RepeatTimeInterval>
+					<IsSnapTo>false</IsSnapTo>
+					<SnapTo>1734216374689</SnapTo>
+					<SnapToTimeUnits>minutes</SnapToTimeUnits>
+					<AllDayExceptionMode>false</AllDayExceptionMode>
+					<LoadFromDatabase><![CDATA[false]]></LoadFromDatabase>
+					<IntervalsQuery>
+						<TableReference>
+						</TableReference>
+							<StartColumnReference>
+							</StartColumnReference>
+							<EndColumnReference>
+							</EndColumnReference>
+							<ValueColumnReference>
+							</ValueColumnReference>
+					</IntervalsQuery>
+					<Intervals>
+					</Intervals>
+					<Exceptions>
+					</Exceptions>
+				</Schedule>
+			</Schedules>
+			<AnalysisData>
+    			<HistogramData>
+					<Id>1732544458915</Id>
+					<Name><![CDATA[powerGeneratedHistogram]]></Name>
+					<X>280</X><Y>-80</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+    			<HistogramData>
+					<Id>1732544570143</Id>
+					<Name><![CDATA[windSpeedHistogram]]></Name>
+					<X>280</X><Y>-40</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+    			<HistogramData>
+					<Id>1732556417618</Id>
+					<Name><![CDATA[housesHistogram]]></Name>
+					<X>600</X><Y>-80</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+    			<HistogramData>
+					<Id>1732581898405</Id>
+					<Name><![CDATA[utilizationRateHistogram]]></Name>
+					<X>600</X><Y>-40</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<Value><![CDATA[]]></Value>
+					<NumberOfIntervals>10</NumberOfIntervals>
+					<MinMaxAutodetect>true</MinMaxAutodetect>
+					<RangeMinExpression><![CDATA[0]]></RangeMinExpression>
+					<RangeMaxExpression><![CDATA[1]]></RangeMaxExpression>
+					<InitialIntervalSize><![CDATA[0.1]]></InitialIntervalSize>
+					<CalculateCDF>true</CalculateCDF>
+					<CalculatePercentiles>false</CalculatePercentiles>
+					<LowPercent>10</LowPercent>
+					<HighPercent>10</HighPercent>
+					<Title><![CDATA[]]></Title>
+				</HistogramData>
+			</AnalysisData>
+
+			<Presentation>
+    			<Histogram>
+					<Id>1732544554243</Id>
+					<Name><![CDATA[chart]]></Name>
+					<X>140</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>true</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732544554245</Id>
+					<Expression><![CDATA[powerGeneratedHistogram]]></Expression>
+						<ColorPDF>-7667573</ColorPDF>
+						<ColorCDF>-23296</ColorCDF>
+						<ColorLowPercent>-12004916</ColorLowPercent>
+						<ColorHighPercent>-8097537</ColorHighPercent>
+						<ColorMean>-4343957</ColorMean>
+						<LineWidth>4</LineWidth>						
+						<Title><![CDATA[powerGeneratedHistogram]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+    			<Histogram>
+					<Id>1732544585436</Id>
+					<Name><![CDATA[chart1]]></Name>
+					<X>140</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>true</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732544585438</Id>
+					<Expression><![CDATA[windSpeedHistogram]]></Expression>
+						<ColorPDF>-2448096</ColorPDF>
+						<ColorCDF>-9728477</ColorCDF>
+						<ColorLowPercent>-4565549</ColorLowPercent>
+						<ColorHighPercent>-2354116</ColorHighPercent>
+						<ColorMean>-16728065</ColorMean>
+						<LineWidth>4</LineWidth>						
+						<Title><![CDATA[windSpeed]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+    			<Histogram>
+					<Id>1732556442524</Id>
+					<Name><![CDATA[chart2]]></Name>
+					<X>580</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>true</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732556442526</Id>
+					<Expression><![CDATA[housesHistogram]]></Expression>
+						<ColorPDF>-8097537</ColorPDF>
+						<ColorCDF>-60269</ColorCDF>
+						<ColorLowPercent>-12799119</ColorLowPercent>
+						<ColorHighPercent>-9807155</ColorHighPercent>
+						<ColorMean>-29696</ColorMean>
+						<LineWidth>4</LineWidth>						
+						<Title><![CDATA[housesHistogram]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+    			<Histogram>
+					<Id>1732581920483</Id>
+					<Name><![CDATA[chart3]]></Name>
+					<X>580</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1732608000000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<ShowPDF>true</ShowPDF>
+					<ShowCDF>false</ShowCDF>
+					<ShowMean>true</ShowMean>
+					<Bars>
+						<Direction>UP</Direction>
+						<RelativeWidth>0.8</RelativeWidth>
+					</Bars>
+					<HistogramDataExpression>
+					<Id>1732581920485</Id>
+					<Expression><![CDATA[utilizationRateHistogram]]></Expression>
+						<ColorPDF>-16711936</ColorPDF>
+						<ColorCDF>-6632142</ColorCDF>
+						<ColorLowPercent>-3137392</ColorLowPercent>
+						<ColorHighPercent>-32944</ColorHighPercent>
+						<ColorMean>-14774017</ColorMean>
+						<LineWidth>4</LineWidth>						
+						<Title><![CDATA[utilizationRateHistogram]]></Title>							
+					</HistogramDataExpression>
+    			</Histogram>
+				<Text>
+					<Id>1732582117478</Id>
+					<Name><![CDATA[t1]]></Name>
+					<X>590</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Tasa de utilización promedio (%)]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732582189461</Id>
+					<Name><![CDATA[t2]]></Name>
+					<X>600</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Promedio casas abastecidas]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732582219293</Id>
+					<Name><![CDATA[t3]]></Name>
+					<X>170</X><Y>50</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Energía total promedio (kW)]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+				<Text>
+					<Id>1732582256421</Id>
+					<Name><![CDATA[t4]]></Name>
+					<X>140</X><Y>350</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>
+					<Color>-16777216</Color>
+					<Text><![CDATA[Velocidad promedio del viento (m/s)]]></Text>
+					<Font>
+						<Name>SansSerif</Name>
+						<Size>18</Size>
+						<Style>0</Style>
+					</Font>
+					<Alignment>LEFT</Alignment>
+				</Text>
+			</Presentation>
+
+			<AfterExperimentCode><![CDATA[/*for (String resultado : resultadosSimulacion) {
+    traceln(resultado);
+}*/]]></AfterExperimentCode>
+			<AllowParallelEvaluations>true</AllowParallelEvaluations>
+			<UseFreeformParameters>false</UseFreeformParameters>
+			<NumberOfRuns>10</NumberOfRuns>
+			<FreeformParamValue>	
+				<Id>1731329211642</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1731939988882</Id>
+			</FreeformParamValue>
+			<FreeformParamValue>	
+				<Id>1731939999696</Id>
+			</FreeformParamValue>
+			<RangeVariationParamValue>	
+				<Id>1731329211642</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1731939988882</Id>
+				<Type>FIXED</Type>
+			</RangeVariationParamValue>
+			<RangeVariationParamValue>	
+				<Id>1731939999696</Id>
+				<Type>FIXED</Type>
+				<From Class="CodeValue">
+					<Code><![CDATA[15]]></Code>
+				</From>
+				<To Class="CodeValue">
+					<Code><![CDATA[16]]></Code>
+				</To>
+			</RangeVariationParamValue>
+			<ModelTimeProperties>
+				<StopOption><![CDATA[Stop at specified time]]></StopOption>
+				<InitialDate><![CDATA[1729382400000]]></InitialDate>	
+				<InitialTime><![CDATA[1.0]]></InitialTime>	
+				<FinalDate><![CDATA[1760832000000]]></FinalDate>	
+				<FinalTime><![CDATA[365.0]]></FinalTime>	
+			</ModelTimeProperties>
+			<PresentationProperties>
+				<EnableZoomAndPanning>true</EnableZoomAndPanning>
+				<Title><![CDATA[testing4 : ParametersVariation]]></Title>
+				<EnableDeveloperPanel>true</EnableDeveloperPanel>
+				<ShowDeveloperPanelOnStart>false</ShowDeveloperPanelOnStart>
+			</PresentationProperties>
+			<ReplicationsProperties>
+				<UseReplication>true</UseReplication>
+				<FixedReplicationsNumber>true</FixedReplicationsNumber>
+				<ReplicationPerIteration>100</ReplicationPerIteration>
+				<MinimumReplication>2</MinimumReplication>
+				<MaximumReplication>10</MaximumReplication>
+				<ConfidenceLevel>LEVEL_80</ConfidenceLevel>
+				<ErrorPercent>0.5</ErrorPercent>
+				<ExpressionForConfidenceComputation><![CDATA[0]]></ExpressionForConfidenceComputation>
+			</ReplicationsProperties>
+		</ParamVariationExperiment>	
 	</Experiments>
 	<ModelResources>
 		<Resource>
 			<Path><![CDATA[3d/wind_turbine_blades.dae]]></Path>
-			<ReferencedFromUserCode>false</ReferencedFromUserCode>
-			<Location>FILE_SYSTEM</Location>
-		</Resource>
-		<Resource>
-			<Path><![CDATA[C:/Users/Musimundo/Desktop/Marcos/UTN/4to/Simulación/TPI/wind_turbine_coordinates.xlsx]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
@@ -3003,17 +4161,22 @@ if (windSpeed < 3) {
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
 		<Resource>
-			<Path><![CDATA[3d/airliner.jpg]]></Path>
-			<ReferencedFromUserCode>false</ReferencedFromUserCode>
-			<Location>FILE_SYSTEM</Location>
-		</Resource>
-		<Resource>
 			<Path><![CDATA[3d/lorry.dae]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
 		<Resource>
 			<Path><![CDATA[3d/hangar_2.dae]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[3d/airliner.jpg]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[3d/airliner.jpg]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
