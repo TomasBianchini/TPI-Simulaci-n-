@@ -225,8 +225,10 @@
 						</RecurrenceCode>
 						<Condition><![CDATA[band=false;]]></Condition>
 					</Properties>
-					<Action><![CDATA[double scale = 8.03863;
-double shape = 2.10833;
+					<Action><![CDATA[//double scale = 8.03863;
+double scale = 8.02409;
+//double shape = 2.10833;
+double shape = 2.23642;
 windSpeed = weibull(scale, shape);
 
 for (int i = 0; i < turbines.size(); i++) {
@@ -3507,7 +3509,7 @@ traceln(root.casasAbastecidasPromedio.mean());]]></AfterSimulationRunCode>
 			<AfterSimulationRunCode><![CDATA[powerGeneratedHistogram.add(root.totalPotenciaPromedio.mean());
 windSpeedHistogram.add(root.vientoPromedio.mean());
 housesHistogram.add(root.casasAbastecidasPromedio.mean());
-utilizationRateHistogram.add(100*100*root.tasaUtilizacion.mean());
+utilizationRateHistogram.add(100*root.tasaUtilizacion.mean());
 
 //traceln(root.vientoPromedio.mean());
 //traceln(root.totalPotenciaPromedio.mean());
